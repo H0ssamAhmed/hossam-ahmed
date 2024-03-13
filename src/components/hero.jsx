@@ -16,7 +16,7 @@ const Hero = () => {
                     </p>
                     <div className=' flex gap-2 justify-start items-center mt-4'>
                         <a href='#Contact' className='bg-primary transition  text-white hover:text-black  hover:bg-secondary px-4 py-2 rounded '>Contact me</a>
-                        <a target='blank' href='https://drive.google.com/file/d/1GZS18AxHwUkQcpSNCQdQnb50JNk875Ih/view?usp=drive_link' className=' hover:bg-primary transition text-black hover:text-white   bg-secondary px-4 py-2 rounded '>Download  CV</a>
+                        <a target='blank' href='https://drive.google.com/file/d/1meyVo1FnLephifEzfShBakmv750TM6pM/view' className=' hover:bg-primary transition text-black hover:text-white   bg-secondary px-4 py-2 rounded '>Download  CV</a>
                     </div>
                 </div>
                 <div className=' hidden md:flex items-center justify-center effect'>
