@@ -101,6 +101,15 @@
   }
 }
 
+table {
+  width: 100%;
+  border: #009688 solid 2px;
+}
+
+td {
+  border: yellow 1px solid;
+}
+
 * {
   scroll-behavior: smooth;
 }

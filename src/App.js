@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, Outlet } from 'react-router-dom';
 import './App.css';
 import CursorCircle from './components/CursorCircle ';
 import Home from './components/home';
@@ -7,6 +7,7 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Projects from './pages/Projects/projects';
 import Error from './pages/error/error';
+import ArticleOne from './pages/articles/articleOne/articleOne';
 
 function App() {
   return (
@@ -16,7 +17,12 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/articles" element={<Articles />} />
+          <Route path="/articles" element={<>
+            <Outlet />
+          </>} >
+            <Route path='' element={<Articles />} />
+            {/* <Route path=':artice-name' element={<ArticleOne />} /> */}
+          </Route>
           <Route path="/Projects" element={<Projects />} />
           <Route path="/*" element={<Error />} />
         </Routes>

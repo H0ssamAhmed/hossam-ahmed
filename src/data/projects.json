@@ -12,7 +12,7 @@
                 "And more features that you can explore from the demo link above"
             ],
             "Technologies": [
-                "Next.JS",
+                "Next.js",
                 "TailwindCSS",
                 "Convex",
                 "clerk",
@@ -46,6 +46,25 @@
         },
         {
             "id": 3,
+            "name": "TechTrove",
+            "description": "TechTrove is a professional technical articles website in software, soft skills, and so on",
+            "Features": [
+                "Read online articles",
+                "Explore subjects by catgories or tags",
+                "write your own article (Share your knowledge with others)",
+                "like and dislike for each article"
+            ],
+            "Technologies": [
+                "Next.js",
+                "TailwindCSS"
+            ],
+            "image": "https://res.cloudinary.com/dc5eb9lmi/image/upload/v1710290505/techtrove_lovjha.png",
+            "CloneRepo": "https://github.com/H0ssamAhmed/TechTrove-.git",
+            "GitHubRepo": "https://github.com/H0ssamAhmed/TechTrove-",
+            "Demo_version": "https://tech-trove-ten.vercel.app/"
+        },
+        {
+            "id": 4,
             "name": "Tseppas",
             "description": "Dark-Light full stack E-commerce for oriental desserts with payment method, Strapi CMS, authentication , authorization  by clerk  ",
             "Features": [
@@ -72,7 +91,7 @@
             "Demo_version": "https://tseppas-front-end.vercel.app"
         },
         {
-            "id": 4,
+            "id": 5,
             "name": "HooBank",
             "description": "HooBank the future of banking and The Next Generation Payment Method",
             "Features": [
@@ -92,7 +111,7 @@
             "Demo_version": "https://h0ssamahmed.github.io/HooBank"
         },
         {
-            "id": 5,
+            "id": 6,
             "name": "GPT-3",
             "description": "Landing page for GPT-3, This application utilizes OpenAI's GPT-3 to generate human-like text based on user input.",
             "Features": [
@@ -120,7 +139,7 @@
                 "And more features that you can explore from the demo link above"
             ],
             "Technologies": [
-                "Next.JS",
+                "Next.js",
                 "TailwindCSS",
                 "Convex",
                 "clerk",
@@ -154,6 +173,25 @@
         },
         {
             "id": 3,
+            "name": "TechTrove",
+            "description": "TechTrove is a professional technical articles website in software, soft skills, and so on",
+            "Features": [
+                "Read online articles",
+                "Explore subjects by catgories or tags",
+                "write your own article (Share your knowledge with others)",
+                "like and dislike for each article"
+            ],
+            "Technologies": [
+                "Next.js",
+                "TailwindCSS"
+            ],
+            "image": "https://res.cloudinary.com/dc5eb9lmi/image/upload/v1710290505/techtrove_lovjha.png",
+            "CloneRepo": "https://github.com/H0ssamAhmed/TechTrove-.git",
+            "GitHubRepo": "https://github.com/H0ssamAhmed/TechTrove-",
+            "Demo_version": "https://tech-trove-ten.vercel.app/"
+        },
+        {
+            "id": 4,
             "name": "Tseppas",
             "description": "Dark-Light full stack E-commerce for oriental desserts with payment method, Strapi CMS, authentication , authorization  by clerk  ",
             "Features": [
@@ -180,7 +218,7 @@
             "Demo_version": "https://tseppas-front-end.vercel.app"
         },
         {
-            "id": 4,
+            "id": 5,
             "name": "HooBank",
             "description": "HooBank the future of banking and The Next Generation Payment Method",
             "Features": [
@@ -200,7 +238,7 @@
             "Demo_version": "https://h0ssamahmed.github.io/HooBank"
         },
         {
-            "id": 5,
+            "id": 6,
             "name": "GPT-3",
             "description": "Landing page for GPT-3, This application utilizes OpenAI's GPT-3 to generate human-like text based on user input.",
             "Features": [
