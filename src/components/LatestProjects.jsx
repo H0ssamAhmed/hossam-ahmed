@@ -6,7 +6,6 @@ import { Link } from 'react-router-dom';
 const ImageSide = ({ project, Position }) => {
     return (<div className='col-span-2 overflow-hidden'>
         <Link to={project.Demo_version} target="_blank">
-
             <img src={project.image} className={`object-cover   duration-300 ${Position} rotate-0 md:group-hover:rotate-0 rounded-none hover:rounded-none `} alt='project preview' />
         </Link>
     </div>)

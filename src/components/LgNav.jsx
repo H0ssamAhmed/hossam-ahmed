@@ -9,12 +9,15 @@ const LgNav = ({ setShowNav, showNav }) => {
     document.addEventListener('scroll', () => {
         window.scrollY > 500 ? setPosition('sticky  border-primary') : setPosition('')
     })
+    const handelShowNav=()=>{
+        setShowNav(!showNav)
+    }
     return (
         <nav className={`border-b dark:bg-primary-background bg-white w-full ${position} transition-all top-0 z-10 h-[60px] flex items-center justify-center`} >
             <div className='container  flex items-center justify-between  '>
                 <div className='  items-center justify-start gap-10  hidden md:flex'>
                     <Link to='/'>
-                        <IoHomeOutline className=' w-6 h-6 text-primary' />
+                        {/* <IoHomeOutline className=' w-6 h-6 text-primary' /> */}
                     </Link>
                     <div className='dark:text-white  flex justify-between items-center roboto-regular gap-4'>
                         <a href='/#About' className='hover:text-primary roboto-medium transition' >About</a>
@@ -26,7 +29,7 @@ const LgNav = ({ setShowNav, showNav }) => {
                 </div>
                 {/* ------------------------------------------------- */}
                 <div className=' flex md:hidden justify-center items-center'>
-                    <IoMenuSharp onClick={() => setShowNav(!showNav)} className=' cursor-pointer hover:text-primary transition mx-4 w-5 h-5' />
+                    <IoMenuSharp onClick={handelShowNav} className=' cursor-pointer hover:text-primary transition mx-4 w-5 h-5' />
                     <Link to='/'>
 
                         <h1 className='text-[20px]  text-primary roboto-bold selection:bg-primary selection:text-primary-background'>Hossam Ahmed</h1>

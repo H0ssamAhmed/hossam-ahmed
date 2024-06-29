@@ -16,9 +16,9 @@ const CursorCircle = () => {
     }, []);
 
     return (
-        <div className={`cursor`}
+        <div className={`cursor hidden md:block`}
             style={{ left: position.x, top: position.y }}  >
-            <div className='w-4 h-4'>
+            <div className='w-4 h-4 hidden md:block'>
 
             </div>
 

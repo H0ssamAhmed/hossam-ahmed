@@ -6,8 +6,7 @@ import Articles from './pages/articles/Articles';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Projects from './pages/Projects/projects';
-import Error from './pages/error/error';
-import ArticleOne from './pages/articles/articleOne/articleOne';
+import Error from './pages/error/error'; 
 
 function App() {
   return (
@@ -21,7 +20,6 @@ function App() {
             <Outlet />
           </>} >
             <Route path='' element={<Articles />} />
-            {/* <Route path=':artice-name' element={<ArticleOne />} /> */}
           </Route>
           <Route path="/Projects" element={<Projects />} />
           <Route path="/*" element={<Error />} />

@@ -5,7 +5,6 @@ const ThemProvider = () => {
 
 
     const handleToogler = () => {
-        console.log('theme', theme);
         if (theme === 'light') {
             setTheme('dark')
             localStorage.setItem('theme', 'dark');

@@ -1,7 +1,7 @@
 import React from 'react'
 import { FaBootstrap, FaCss3, FaGithub, FaHtml5, FaReact, FaGit } from "react-icons/fa6";
 import { IoLogoJavascript } from 'react-icons/io5';
-import { SiNextdotjs, SiTailwindcss } from "react-icons/si";
+import { SiNextdotjs, SiTailwindcss, SiTypescript } from "react-icons/si";
 import SectionHeader from './SectionHeader';
 
 
@@ -11,12 +11,13 @@ const Skills = () => {
         { skill: 'HTML', Logo: FaHtml5 },
         { skill: 'CSS', Logo: FaCss3 },
         { skill: 'JavaScript', Logo: IoLogoJavascript },
+        { skill: 'TypeScript', Logo: SiTypescript },
         { skill: 'Reactjs', Logo: FaReact },
         { skill: 'Next.js', Logo: SiNextdotjs },
         { skill: 'Tailwind CSS', Logo: SiTailwindcss },
         { skill: 'Bootstrap', Logo: FaBootstrap },
         { skill: 'Git', Logo: FaGit },
-        { skill: 'Github', Logo: FaGithub }
+        { skill: 'Github', Logo: FaGithub },
     ]
     return (
         <section className='py-4  mx-auto' id='skills'>

@@ -1,6 +1,29 @@
 {
     "latest": [
         {
+            "id": 7,
+            "name": "Be Baby Shop 2",
+            "description": "Be Baby Shop 2 is an e-commerce for children needs",
+            "Features": [   
+            "Add Items to cart",
+            "Change qauntity when ",
+            "Preview product before adding it",
+            "Selct color and size",
+            "Change price according to selected"
+            ],
+            "Technologies": [
+                "TypeScript",
+                "React.JS",
+                "Next.JS",
+                "TailwindCSS"
+            ],
+            "image": "https://res.cloudinary.com/dc5eb9lmi/image/upload/v1719676907/BeBabyShop-2/Be_Baby_Shop_2_-_1_yrt481.png",
+            "CloneRepo": "https://github.com/H0ssamAhmed/BeBabyShop-2.git",
+            "GitHubRepo": "https://github.com/H0ssamAhmed/BeBabyShop-2",
+            "Demo_version": "https://be-baby-shop-2.vercel.app/"
+
+        },
+        {
             "id": 1,
             "name": "Jotion (Notion clone)",
             "description": "Dark-Light full stack note-taking app connected with convex back-end, authentication and authorization by clerk",
