@@ -12,7 +12,6 @@
 </h1>
 
 <h3 align="start">I’m a Front-End developer, passionate about transforming static web design into code and interactive user-intertface 🚀</h3>
-
 <br>
 
 # 🛠️ Technologies I Love Working With
