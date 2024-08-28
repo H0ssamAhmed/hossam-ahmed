@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { IoHomeOutline, IoMenuSharp, IoMoon, IoSunny } from "react-icons/io5";
 import { Link } from 'react-router-dom';
 import ThemProvider from '../providers/themProvider';
@@ -6,18 +6,17 @@ import ThemProvider from '../providers/themProvider';
 const LgNav = ({ setShowNav, showNav }) => {
     const [position, setPosition] = useState("")
     const { theme, handleToogler } = ThemProvider()
-    document.addEventListener('scroll', () => {
-        window.scrollY > 500 ? setPosition('sticky  border-primary') : setPosition('')
-    })
-    const handelShowNav=()=>{
+
+    document.addEventListener('scroll', () => window.scrollY > 600 ? setPosition('fixed border-primary') : setPosition(''))
+    const handelShowNav = () => {
         setShowNav(!showNav)
     }
     return (
         <nav className={`border-b dark:bg-primary-background bg-white w-full ${position} transition-all top-0 z-10 h-[60px] flex items-center justify-center`} >
             <div className='container  flex items-center justify-between  '>
                 <div className='  items-center justify-start gap-10  hidden md:flex'>
-                    <Link to='/'>
-                        {/* <IoHomeOutline className=' w-6 h-6 text-primary' /> */}
+                    <Link to='/' className='hover:text-primary roboto-bold font-extrabold  transition' >
+                        <IoHomeOutline size={26} fontWeight={900} />
                     </Link>
                     <div className='dark:text-white  flex justify-between items-center roboto-regular gap-4'>
                         <a href='/#About' className='hover:text-primary roboto-medium transition' >About</a>

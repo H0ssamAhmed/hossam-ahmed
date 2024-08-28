@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 const ImageSide = ({ project, Position }) => {
     return (<div className='col-span-2 overflow-hidden'>
         <Link to={project.Demo_version} target="_blank">
-            <img src={project.image} className={`object-cover   duration-300 ${Position} rotate-0 md:group-hover:rotate-0 rounded-none hover:rounded-none `} alt='project preview' />
+            <img src={project.image} loading="lazy" className={`object-cover   duration-300 ${Position} rotate-0 md:group-hover:rotate-0 rounded-none hover:rounded-none `} alt='project preview' />
         </Link>
     </div>)
 }
@@ -18,11 +18,11 @@ const TextSide = ({ project }) => {
             <p className='text-[12px] my-4 mx-4 '>{project.description}</p>
         </div>
         <div className='  left-2 group-hover:opacity-100 transition duration-1000 opacity-0 flex flex-wrap items-center justify-center gap-2'>
-            <Link to={project.Demo_version} target="_blank" className=' flex items-center gap-1 bg-primary hover:bg-primary/80 p-2 rounded-sm my-2 cursor-pointer   text-[20px]'>
+            <Link to={project.Demo_version} aria-label="live preview" target="_blank" className=' flex items-center gap-1 bg-primary hover:bg-primary/80 p-2 rounded-sm my-2 cursor-pointer   text-[20px]'>
                 <FaExternalLinkAlt />
             </Link>
 
-            <Link to={project.GitHubRepo} target="_blank" className=' flex items-center gap-1 bg-primary hover:bg-primary/80 p-2 rounded-sm my-2 cursor-pointer   text-[20px]'>
+            <Link to={project.GitHubRepo} aria-label="GitHub Repository" target="_blank" className=' flex items-center gap-1 bg-primary hover:bg-primary/80 p-2 rounded-sm my-2 cursor-pointer   text-[20px]'>
                 <FaGithub />
             </Link>
         </div>
@@ -34,7 +34,7 @@ const LatestProjects = () => {
             <div className='contaidner'>
                 <div className='mx-0 md:mx-16 flex flex-wrap justify-between mb-4 items-center py-4'>
                     <h1 className=' text-[22px]'>My latest projects</h1>
-                    <Link to='/projects' className='bg-primary text-white p-2 rounded'>More</Link>
+                    <Link to='/projects' className='bg-primary text-black p-2 rounded'>More</Link>
                 </div>
                 <div className='mx-0 md:mx-16 flex flex-col gap-3'>
                     {projects.latest?.map((project, index) => {

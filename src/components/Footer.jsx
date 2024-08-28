@@ -36,8 +36,8 @@ const Footer = () => {
                         </div>
                     </div>
                     <div className=' mx-auto md:ml-0 self-center'>
-                        <img className='dark:hidden w-20 md:w-40' src={(darkLogo)} alt='Logo' />
-                        <img className='dark:block hidden w-20 md:w-40' src={(Logo)} alt='Logo' />
+                        <img className='dark:hidden w-20 md:w-40' loading="lazy" src={(darkLogo)} alt='Logo' />
+                        <img className='dark:block hidden w-20 md:w-40' loading="lazy" src={(Logo)} alt='Logo' />
                     </div>
                     <div className=' mx-auto md:ml-0'>
                         <h4 className='text-[24px]'>
@@ -51,7 +51,7 @@ const Footer = () => {
                         </div>
                     </div>
                 </div>
-                <div className=' text-center text-gray-500 py-4' >
+                <div className=' text-center text-black dark:text-gray-100  py-4' >
                     <p>&copy;2023 -  {new Date().getFullYear()} Hossam. Ahmed, All rights reserved.</p>
                     <p className='py-1'> <strong>About this website:</strong> built with React, Tailwind CSS, and Vercel hosting.</p>
                 </div>

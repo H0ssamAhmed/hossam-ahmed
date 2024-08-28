@@ -2,9 +2,9 @@ import React from 'react'
 import { IoSendSharp } from 'react-icons/io5';
 
 const Contact = () => {
-    
+
     const handleSubmit = (e) => e.preventDefault()
-    
+
     return (
         <section className='py-8' id='Contact'>
             <div className=' container py-5'>
@@ -33,7 +33,7 @@ const Contact = () => {
                         </div>
                     </div>
                     <textarea className='p-2 pl-6 w-full h-48 dark:bg-secondary/80 text-black  bg-primary-background/5 border-secondary dark:focus:bg-secondary placeholder:text-primary border-[5px] focus:border-primary focus:outline-none duration-500 outline-transparent focus:outline-transparent  transition-all rounded-[8px]' placeholder='Leave a message for what you want' />
-                    <a href='mailto:hossamahmed8862@gmail.com' className='w-full text-center bg-primary py-2 rounded-[8px] text-white hover:bg-primary/50 hover:-skew-x-6 hover:sdcale-110  transition ' type='submit'>Submit</a>
+                    <a href='mailto:hossamahmed8862@gmail.com' className='w-full text-center bg-primary py-2 rounded-[8px] text-black hover:bg-primary/50 hover:-skew-x-6 hover:sdcale-110  transition ' type='submit'>Submit</a>
 
 
                 </form>
