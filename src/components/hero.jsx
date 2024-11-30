@@ -22,7 +22,9 @@ const Hero = () => {
                     <div className='flex gap-2 justify-start items-center mt-4'>
                         <a href='#Contact' className='bg-primary transition text-black  hover:bg-secondary px-4 py-2 rounded '>Contact me
                         </a>
-                        <a target='blank' href='https://drive.google.com/file/d/1GynYzSR-c9jv0cmWKaEsSQg9zpQe6e-e/view?usp=sharing' className=' hover:bg-primary transition text-black  bg-secondary px-4 py-2 rounded '>
+                        <a target='blank' download="Hossam Ahmed Front Eend Developer.pdf"
+                            href='https://drive.google.com/file/d/1gPCA6BaandANdN_XWWkSUF5trSe4suLL/view?usp=sharing'
+                            className=' hover:bg-primary transition text-black  bg-secondary px-4 py-2 rounded '>
                             Download  CV</a>
                     </div>
                 </div>
