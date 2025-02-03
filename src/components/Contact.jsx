@@ -86,8 +86,10 @@ const Contact = () => {
                                 name="from_email"  // ✅ Matches EmailJS template
                                 value={emailData.from_email}
                                 onChange={handleChange}
-                                type="email" required className="p-2 pl-6 dark:bg-secondary/80 text-black bg-primary-background/5 border-secondary dark:focus:bg-secondary placeholder:text-primary border-[5px] focus:border-primary focus:outline-none duration-500 outline-transparent focus:outline-transparent transition-all rounded-[8px]"
-                                placeholder="Your Email, Please 😊" />
+                                type="email"
+                                required
+                                className="p-2 pl-6 dark:bg-secondary/80 text-black bg-primary-background/5 border-secondary dark:focus:bg-secondary placeholder:text-primary border-[5px] focus:border-primary focus:outline-none duration-500 outline-transparent focus:outline-transparent transition-all rounded-[8px]"
+                                placeholder="Your subject, Please 😊" />
                         </div>
                     </div>
                     <label className="p-2">Subject</label>
