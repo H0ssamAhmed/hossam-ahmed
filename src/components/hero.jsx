@@ -16,15 +16,23 @@ const Hero = () => {
 
                         <span className="bg-primary text-white dark:text-primary-background">AHM</span>ED</h1>
                     <h2 className='text-2xl text-gray-800 dark:text-white roboto-bold'>Front end developer</h2>
-                    <p className=' text-lg text-gray-800 dark:text-white my-4'>Front-End developer. I’m passionate about transforming static design into interactive user-interface</p>
-                    <p className=' text-lg text-gray-800 dark:text-white my-4'>My commitment to  to continuous growth and delivering high-quality web application
+                    <p className='text-lg text-gray-800 dark:text-white my-4'>
+                        Front-End Developer specializing in <span className='font-bold'> React JS</span> and <span className='font-bold'> Next JS</span>.
                     </p>
+                    <p className='text-lg text-gray-800 dark:text-white my-4'>
+                        Certified in Front-End Development and React by <span className='font-bold'> Meta</span> Meta, with a strong foundation in JavaScript.
+                    </p>
+                    <p className='text-lg text-gray-800 dark:text-white my-4'>
+                        Successfully developed and launched  <span className='font-bold'> 20+ projects</span> showcasing my ability to deliver scalable, high-quality web solutions.
+                    </p>
+
+
                     <div className='flex gap-2 justify-start items-center mt-4'>
-                        <a href='#Contact' className='bg-primary transition text-black  hover:bg-secondary px-4 py-2 rounded '>Contact me
+                        <a href='#Contact' className='bg-primary transition text-white  hover:bg-primary/80 px-4 py-2 rounded '>Contact me
                         </a>
                         <a target='blank' download="Hossam Ahmed Front Eend Developer.pdf"
                             href='https://drive.google.com/file/d/1gPCA6BaandANdN_XWWkSUF5trSe4suLL/view?usp=sharing'
-                            className=' hover:bg-primary transition text-black  bg-secondary px-4 py-2 rounded '>
+                            className=' hover:bg-secondary/80 transition text-black  bg-secondary px-4 py-2 rounded '>
                             Download  CV</a>
                     </div>
                 </div>

@@ -34,7 +34,7 @@ const LatestProjects = () => {
             <div className='contaidner'>
                 <div className='mx-0 md:mx-16 flex flex-wrap justify-between mb-4 items-center py-4'>
                     <h1 className=' text-[22px]'>My latest projects</h1>
-                    <Link to='/projects' className='bg-primary text-black p-2 rounded'>More</Link>
+                    <Link to='/projects' className='bg-primary hover:bg-primary/55 text-white py-2 px-8 rounded'>More</Link>
                 </div>
                 <div className='mx-0 md:mx-16 flex flex-col gap-3'>
                     {projects.latest?.map((project, index) => {
