@@ -31,7 +31,7 @@ const Hero = () => {
                         <a href='#Contact' className='bg-primary transition text-white  hover:bg-primary/80 px-4 py-2 rounded '>Contact me
                         </a>
                         <a target='blank' download="Hossam Ahmed Front Eend Developer.pdf"
-                            href='https://drive.google.com/file/d/1gPCA6BaandANdN_XWWkSUF5trSe4suLL/view?usp=sharing'
+                            href='https://drive.google.com/file/d/1VDiFssHm0_aOuD9Fe4RTr5Tv874gdOJE/view'
                             className=' hover:bg-secondary/80 transition text-black  bg-secondary px-4 py-2 rounded '>
                             Download  CV</a>
                     </div>
