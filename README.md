@@ -46,3 +46,40 @@
   <img src="https://img.shields.io/badge/MongoDB-%2347A248?style=for-the-badge&logo=mongodb&logoColor=white" alt="MongoDB">
   <img src="https://img.shields.io/badge/SQL-%2300C7B7?style=for-the-badge&logo=postgresql&logoColor=white" alt="SQL">
 </p>
+
+# 🚀 My Portfolio Website
+
+Welcome to my personal **3D portfolio** project!  
+This portfolio is built using **React.js** (not React standalone) with a strong focus on **performance**, **SEO optimization**, **modern UI/UX design**, and **3D animations**.
+
+---
+
+## ✨ Features
+
+- Built with **React.js** for server-side rendering and SEO.
+- Beautiful **3D experiences** using `three.js`, `@react-three/fiber`, and `@react-three/drei`.
+- Fully **responsive** and optimized for all devices.
+- **Light/Dark theme** toggle using `next-themes`.
+- Animated UI with **Framer Motion**.
+- Modern components styled using **TailwindCSS**.
+- Advanced Forms using `react-hook-form` and `zod`.
+- Smooth user interactions with **Radix UI** components.
+- Project and experience data fully dynamic and easy to update.
+
+---
+
+## 🛠️ Tech Stack
+
+- **Framework:** React.js
+- **Styling:** TailwindCSS, TailwindCSS Animate
+- **Forms:** React Hook Form + Zod
+- **3D and Animations:** Three.js, @react-three/fiber, @react-three/drei, Framer Motion
+- **State Management:** TanStack Query (React Query)
+- **UI Components:** Radix UI, Lucide React, ShadCN UI
+- **Charts:** Recharts
+- **Utilities:** clsx, class-variance-authority, tailwind-merge
+- **API Handling:** Axios (if needed separately)
+- **Routing:** React Router DOM (for any client-side navigation if needed)
+- **Other tools:** Sonner (notifications), Vaul (advanced UI), Embla Carousel
+
+---
