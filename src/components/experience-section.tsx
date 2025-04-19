@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { ChevronDown, ChevronUp, Calendar, MapPin, Building } from "lucide-react";
+import { useActiveTab } from "@/context/ActiveTabContext";
 
 interface Experience {
   id: number;
@@ -103,11 +104,13 @@ export function ExperienceSection() {
     },
   };
 
+  const { setActiveTab, activeTab } = useActiveTab()
   return (
     <section id="experience" className="py-20 bg-background relative">
       <div className="absolute inset-0 grid-bg -z-10" />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
+
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -123,6 +126,7 @@ export function ExperienceSection() {
         </motion.div>
 
         <motion.div
+          onViewportEnter={(): void => setActiveTab("experience")}
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"

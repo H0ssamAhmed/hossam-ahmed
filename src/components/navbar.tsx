@@ -1,23 +1,44 @@
 
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
+import { useActiveTab } from "@/context/ActiveTabContext";
 
 const navLinks = [
-  { name: "Home", path: "/" },
-  { name: "Experience", path: "/experience" },
+  // { name: "Home", path: "/" },
+  { name: "Experience", path: "#experience" },
   { name: "Projects", path: "/projects" },
   { name: "Skills", path: "/skills" },
-  { name: "Articles", path: "/articles" },
+  { name: "Education", path: "/education" },
   { name: "Contact", path: "/contact" },
+  { name: "Articles", path: "/articles" },
 ];
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const { activeTab, setActiveTab } = useActiveTab()
+  const navigate = useNavigate()
+  const scrollToSection = (id: string) => {
 
+    if (id === "articles") {
+      setIsOpen(false)
+      setActiveTab(id)
+      navigate("/articles")
+      window.scrollTo(0, 0)
+      return;
+    }
+    navigate("/")
+
+    const section = document.getElementById(id);
+    setIsOpen(false)
+    setActiveTab(id)
+    section.scrollIntoView({ behavior: "smooth" });
+
+  };
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
@@ -80,17 +101,20 @@ export function Navbar() {
                   key={link.name}
                   custom={i}
                   variants={linkVariants}
-                  className="relative group"
+                  className={cn("relative group  rounded-md transition-all duration-1000",
+                    activeTab === link.name.toLowerCase() ? "from-primary to-neon-purple bg-gradient-to-r  " : "")}
                 >
-                  <Link
-                    to={link.path}
-                    className="py-2 text-sm text-foreground hover:text-primary transition-colors"
+                  <p
+                    onClick={() => scrollToSection(link.name.toLowerCase())}
+                    className={cn("cursor-pointer text-sm px-2  py-1 text-foreground hover:text-primary transition-colors",
+                      activeTab === link.name.toLowerCase() ? "text-white hover:text-white" : "")}
                   >
                     {link.name}
-                  </Link>
+                  </p>
                   <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300" />
                 </motion.div>
               ))}
+
             </div>
             <ThemeToggle />
           </div>

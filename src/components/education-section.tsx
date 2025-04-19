@@ -1,4 +1,5 @@
 
+import { useActiveTab } from "@/context/ActiveTabContext";
 import { motion } from "framer-motion";
 import { Calendar, GraduationCap, Award } from "lucide-react";
 
@@ -81,6 +82,8 @@ const certificatesData: Certificate[] = [
 ]
 
 export function EducationSection() {
+  const { setActiveTab } = useActiveTab()
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -118,6 +121,8 @@ export function EducationSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
+          onViewportEnter={(): void => setActiveTab("education")}
+
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-4xl font-bold">

@@ -8,9 +8,11 @@ import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/components/ui/use-toast";
 import { SendEmail } from "@/lib/emailService";
+import { useActiveTab } from "@/context/ActiveTabContext";
 
 export function ContactSection() {
-  const { toast } = useToast();
+  const { setActiveTab } = useActiveTab()
+
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
@@ -63,6 +65,7 @@ export function ContactSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
+          onViewportEnter={(): void => setActiveTab("contact")}
         >
           <h2 className="text-3xl md:text-4xl font-bold">
             Get In <span className="text-gradient">Touch</span>
@@ -124,7 +127,7 @@ export function ContactSection() {
               </div>
             </div>
 
-            <div className="p-6 glass rounded-lg border border-border">
+            <div className="p-6 glass rounded-lg ">
               <h4 className="font-medium mb-4">Connect With Me</h4>
               <div className="flex space-x-4">
                 <a

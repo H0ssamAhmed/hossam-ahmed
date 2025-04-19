@@ -1,6 +1,7 @@
 
 import { useEffect, useRef } from "react";
 import { motion, useInView } from "framer-motion";
+import { useActiveTab } from "@/context/ActiveTabContext";
 
 interface Skill {
   name: string;
@@ -86,6 +87,8 @@ function SkillBar({ name, level, index }: SkillBarProps) {
 }
 
 export function SkillsSection() {
+  const { setActiveTab } = useActiveTab()
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -115,6 +118,8 @@ export function SkillsSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
+          onViewportEnter={(): void => setActiveTab("skills")}
+
         >
           <h2 className="text-3xl md:text-4xl font-bold">
             Technical <span className="text-gradient">Skills</span>

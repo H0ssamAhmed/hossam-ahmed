@@ -4,10 +4,15 @@ import { HeroScene } from "@/components/hero-3d";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Github, Linkedin, Mail } from "lucide-react";
+import { useActiveTab } from "@/context/ActiveTabContext";
 
 export function HeroSection() {
+  const { setActiveTab } = useActiveTab()
   return (
-    <div className="relative min-h-screen pt-20 overflow-hidden">
+    <motion.div
+      id="hero"
+      onViewportEnter={(): void => setActiveTab("hero")}
+      className="relative min-h-screen pt-20 overflow-hidden">
       <div className="absolute inset-0 grid-bg -z-10" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -100,6 +105,6 @@ export function HeroSection() {
           </motion.div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }

@@ -1,10 +1,30 @@
 
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Github, Linkedin, Mail, Twitter } from "lucide-react";
+import { useActiveTab } from "@/context/ActiveTabContext";
 
 export function Footer() {
+  const { activeTab, setActiveTab } = useActiveTab()
+  const navigate = useNavigate()
+
   const currentYear = new Date().getFullYear();
+  const scrollToSection = (id: string) => {
+
+    if (id === "articles") {
+      setActiveTab(id)
+      navigate("/articles")
+      window.scrollTo(0, 0)
+      return;
+    }
+    navigate("/")
+
+    const section = document.getElementById(id);
+
+    setActiveTab(id)
+    section.scrollIntoView({ behavior: "smooth" });
+
+  };
 
   return (
     <footer className="bg-background border-t border-border py-12 relative">
@@ -12,10 +32,19 @@ export function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="md:col-span-2">
-            <Link to="/" className="inline-block">
-              <span className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-neon-purple to-primary">
-                Portfolio
-              </span>
+            <Link to="/" className="text-2xl font-bold flex items-center justify-start gap-0">
+              <img src="https://res.cloudinary.com/dc5eb9lmi/image/upload/v1744880158/my-portfolio/logo-color_f9omtn.png" alt="Logo" className="w-8 h-8 mx-4" />
+
+              <motion.span
+                className="font-bold bg-clip-text text-transparent bg-gradient-to-r from-neon-purple to-primary"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.5 }}
+              >
+                Dev
+              </motion.span>
+
+              <span className="">folio</span>
             </Link>
             <p className="mt-4 text-muted-foreground max-w-md">
               Specialized in building exceptional digital experiences with modern
@@ -54,20 +83,20 @@ export function Footer() {
             <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
             <ul className="space-y-3">
               {[
-                { name: "Home", path: "/" },
-                { name: "Experience", path: "/experience" },
-                { name: "Projects", path: "/projects" },
-                { name: "Skills", path: "/skills" },
-                { name: "Articles", path: "/articles" },
-                { name: "Contact", path: "/contact" },
+                { name: "Experience", path: "#experience" },
+                { name: "Projects", path: "projects" },
+                { name: "Skills", path: "skills" },
+                { name: "Education", path: "education" },
+                { name: "Contact", path: "contact" },
+                { name: "Articles", path: "articles" },
               ].map((link) => (
                 <li key={link.name}>
-                  <Link
-                    to={link.path}
-                    className="text-muted-foreground hover:text-primary transition-colors"
+                  <p
+                    onClick={() => scrollToSection(link.name.toLowerCase())}
+                    className="text-muted-foreground hover:text-primary transition-colors cursor-pointer"
                   >
                     {link.name}
-                  </Link>
+                  </p>
                 </li>
               ))}
             </ul>

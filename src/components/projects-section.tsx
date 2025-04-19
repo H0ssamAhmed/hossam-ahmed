@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Github, ExternalLink, Layers } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { useActiveTab } from "@/context/ActiveTabContext";
 
 interface Project {
   id: string;
@@ -133,6 +134,8 @@ type CategoryType = "All" | "HTML&CSS" | "JavaScript" | "React.JS" | "Next.JS" |
 const categories: CategoryType[] = ["All", "HTML&CSS", "JavaScript", "React.JS", "Next.JS", "Full-Stack"];
 
 export function ProjectsSection() {
+  const { setActiveTab } = useActiveTab()
+
   const [filter, setFilter] = useState<CategoryType>("All");
   const [hoveredProject, setHoveredProject] = useState<string | null>(null);
   const [currentPage, setCurrentPage] = useState(1);
@@ -187,7 +190,10 @@ export function ProjectsSection() {
         </motion.div>
 
         {/* Categories */}
-        <div className="flex justify-center mb-12" id="projects">
+        <motion.div
+          onViewportEnter={(): void => setActiveTab("projects")}
+
+          className="flex justify-center mb-12" id="projects">
           <div className="flex flex-wrap justify-center gap-2">
             {categories.map((category) => (
               <Button
@@ -205,7 +211,7 @@ export function ProjectsSection() {
               </Button>
             ))}
           </div>
-        </div>
+        </motion.div>
 
         {/* Projects */}
         <AnimatePresence mode="wait">
