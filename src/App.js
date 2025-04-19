@@ -6,7 +6,7 @@ import Articles from './pages/articles/Articles';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Projects from './pages/Projects/projects';
-import Error from './pages/error/error'; 
+import Error from './pages/error/error';
 
 function App() {
   return (
@@ -16,9 +16,7 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/articles" element={<>
-            <Outlet />
-          </>} >
+          <Route path="/articles" element={<Outlet />} >
             <Route path='' element={<Articles />} />
           </Route>
           <Route path="/Projects" element={<Projects />} />
