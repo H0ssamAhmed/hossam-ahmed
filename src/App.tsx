@@ -7,32 +7,35 @@ import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import Articles from "./pages/Articles";
 import { Navbar } from "./components/navbar"; import { ActiveTabProvider } from "./context/ActiveTabContext";
+import { ThemeProvider } from "./components/theme-provider";
 ;
 
 const queryClient = new QueryClient();
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
-    <ActiveTabProvider>
-      <TooltipProvider>
-        <Toaster />
-        <Sonner />
-        {/* <Navbar /> */}
+    <ThemeProvider defaultTheme="dark">
+      <ActiveTabProvider>
+        <TooltipProvider>
+          <Toaster />
+          <Sonner />
+          {/* <Navbar /> */}
 
-        <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<Index />} />
+          <BrowserRouter>
+            <Routes>
+              <Route path="/" element={<Index />} />
 
-            <Route path="/experience" element={<Index />} />
-            <Route path="/projects" element={<Index />} />
-            <Route path="/skills" element={<Index />} />
-            <Route path="/contact" element={<Index />} />
-            <Route path="/articles" element={<Articles />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </BrowserRouter>
-      </TooltipProvider>
-    </ActiveTabProvider>
+              <Route path="/experience" element={<Index />} />
+              <Route path="/projects" element={<Index />} />
+              <Route path="/skills" element={<Index />} />
+              <Route path="/contact" element={<Index />} />
+              <Route path="/articles" element={<Articles />} />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </BrowserRouter>
+        </TooltipProvider>
+      </ActiveTabProvider>
+    </ThemeProvider>
 
   </QueryClientProvider>
 );

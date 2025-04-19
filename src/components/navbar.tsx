@@ -10,11 +10,12 @@ import { useActiveTab } from "@/context/ActiveTabContext";
 
 const navLinks = [
   // { name: "Home", path: "/" },
-  { name: "Experience", path: "#experience" },
-  { name: "Projects", path: "/projects" },
-  { name: "Skills", path: "/skills" },
-  { name: "Education", path: "/education" },
-  { name: "Contact", path: "/contact" },
+  { name: "About Me", path: "about me" },
+  { name: "Experience", path: "experience" },
+  { name: "Projects", path: "projects" },
+  { name: "Skills", path: "skills" },
+  { name: "Education", path: "education" },
+  { name: "Contact", path: "contact" },
   { name: "Articles", path: "/articles" },
 ];
 
@@ -95,7 +96,7 @@ export function Navbar() {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-4">
-            <div className="flex space-x-6">
+            <div className="flex space-x-2">
               {navLinks.map((link, i) => (
                 <motion.div
                   key={link.name}
@@ -156,13 +157,15 @@ export function Navbar() {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: i * 0.1, duration: 0.3 }}
               >
-                <Link
-                  to={link.path}
-                  className="block py-2 px-3 text-base rounded-md hover:bg-accent hover:text-accent-foreground transition-colors"
-                  onClick={() => setIsOpen(false)}
+                <p
+                  onClick={() => scrollToSection(link.name.toLowerCase())}
+                  className={cn("cursor-pointer text-sm px-2  py-1 text-foreground hover:text-primary transition-colors",
+                    activeTab === link.name.toLowerCase() ? "text-white hover:text-white" : "")}
                 >
                   {link.name}
-                </Link>
+                </p>
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300" />
+
               </motion.div>
             ))}
           </div>

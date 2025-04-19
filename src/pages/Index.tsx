@@ -7,23 +7,23 @@ import { SkillsSection } from "@/components/skills-section";
 import { EducationSection } from "@/components/education-section";
 import { ContactSection } from "@/components/contact-section";
 import { Footer } from "@/components/footer";
+import About from "@/components/about-section";
 
 const Index = () => {
   return (
-    <ThemeProvider defaultTheme="dark">
-      <div className="min-h-screen">
-        <Navbar />
-        <main>
-          <HeroSection />
-          <ExperienceSection />
-          <ProjectsSection />
-          <SkillsSection />
-          <EducationSection />
-          <ContactSection />
-        </main>
-        <Footer />
-      </div>
-    </ThemeProvider>
+    <div className="min-h-screen">
+      <Navbar />
+      <main>
+        <HeroSection />
+        <About />
+        <ExperienceSection />
+        <ProjectsSection />
+        <SkillsSection />
+        <EducationSection />
+        <ContactSection />
+      </main>
+      <Footer />
+    </div>
   );
 };
 
