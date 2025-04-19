@@ -17,7 +17,7 @@
 </h1>
  
 <h3 align="center">
-  <img align="center" src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=24&duration=5000&pause=500&color=ff9800&width=1100&lines=I’m+a+Front-End+developer%2C+passionate+about+transforming+static+web+design+into+code+and+interactive+user-interface+%F0%9F%9A%80" alt="Typing SVG"/>
+  <img align="center" src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=32&duration=5000&pause=500&color=ff9800&width=1100&lines=Enthusiast +Front-End+developer+and+UI/UX" alt="Typing SVG"/>
 </h3>
 
 <h3 align="center">
