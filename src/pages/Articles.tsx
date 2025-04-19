@@ -41,7 +41,7 @@ const Articles = () => {
 
   return (
     <div className="min-h-screen flex flex-col">
-      {/* <Header /> */}
+      {/*       <Header /> */}
       <Navbar />
 
 
@@ -52,6 +52,7 @@ const Articles = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
+            <h4 className='py-2 mb-5 text-center animate-pulse bg-orange-600'>Under development</h4>
             <h1 className="text-4xl font-bold mb-4">Articles & Blog</h1>
             <p className="text-lg text-muted-foreground max-w-3xl mb-12">
               Thoughts, tutorials, and insights on web development, design, and technology.

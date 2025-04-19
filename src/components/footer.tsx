@@ -80,18 +80,18 @@ export function Footer() {
                 <p>Jeddah, Saudi Arabia</p>
                 <p>
                   <a
-                    href="mailto:example@example.com"
+                    href="mailto:hossamahmed8862@gmail.com"
                     className="hover:text-primary transition-colors"
                   >
-                    example@example.com
+                    hossamahmed8862@gmail.com
                   </a>
                 </p>
                 <p>
                   <a
-                    href="tel:+123456789"
+                    href="tel:+966510837149"
                     className="hover:text-primary transition-colors"
                   >
-                    +1 (234) 567-890
+                    +966 51 083 7149
                   </a>
                 </p>
               </div>

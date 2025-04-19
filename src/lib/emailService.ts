@@ -11,43 +11,34 @@ interface EmailFormProps {
   message?: string;
 }
 
-// export const ContactUs = (data: EmailFormProps, setFormData) => {
 
 export const SendEmail = (
-  e: React.FormEvent,
-  setFormData: React.Dispatch<React.SetStateAction<EmailFormProps>>,
-  data: any,
-  setIsSubmitting: boolean) => {
-  e.preventDefault();
-  console.log(e);
-  console.log(data.current);
+  form: React.RefObject<HTMLFormElement>,
 
-  setIsSubmitting(true);
+) => {
   emailjs
-    .sendForm('service_xts7s5w', 'template_fd8xs1j', data.current, {
+    .sendForm('service_xts7s5w', 'template_fd8xs1j', form.current, {
       publicKey: '1v0LcZgDZWloLjLYZ',
     })
     .then(response => {
       if (response?.text === 'OK') {
         toast('Email sent successfully!', {
+          icon: '✅',
           description: 'Your message has been sent. We will get back to you soon.',
         });
-        return
-      } else {
-        toast('Failed to sent email!', {
-          description: 'There was an error sending your message. Please try again.',
-        });
+        return true
       }
+
 
     })
     .catch((err) => {
-      console.log(err);
-      alert("Error sending email. Please try again later.");
+      toast('Failed to sent email!', {
+        icon: '❌',
+        description: 'There was an error sending your message. Please try again.',
+      });
     });
-  setIsSubmitting(false);
 
-
-  return true
+  return false
 
 };
 // return { sendEmail, form };

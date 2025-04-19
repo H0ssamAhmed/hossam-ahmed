@@ -20,6 +20,7 @@ export function ContactSection() {
   });
   const form = useRef<null>();
 
+
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
@@ -29,20 +30,18 @@ export function ContactSection() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // setIsSubmitting(true);
+    setIsSubmitting(true);
 
-    // Simulate form submission
-    SendEmail(e, setFormData, form);
-    // setTimeout(() => {
+    if (SendEmail(form)) {
+      setFormData({
+        name: '',
+        subject: '',
+        email: '',
+        message: '',
+      });
+    };
     setIsSubmitting(false);
-    //   toast({
-    //     title: "Message sent!",
-    //     description: "Thank you for reaching out. I'll get back to you soon.",
-    //   });
-    //   setFormData({ name: "", email: "", subject: "", message: "" });
-    // }, 1500);
   };
-
   const contactVariants = {
     hidden: { opacity: 0, y: 20 },
     visible: {
@@ -178,7 +177,7 @@ export function ContactSection() {
           >
             <h3 id="contact" className="text-2xl font-semibold mb-6">Send Message</h3>
 
-            <form ref={form} onSubmit={(e) => SendEmail(e, setFormData, form, setIsSubmitting)} className="space-y-6">
+            <form ref={form} onSubmit={handleSubmit} className="space-y-6">
               <div className="space-y-2">
                 <Label htmlFor="name">Name</Label>
                 <Input
