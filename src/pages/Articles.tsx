@@ -3,10 +3,11 @@ import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { FiCalendar, FiClock, FiTag, FiArrowRight } from 'react-icons/fi';
-
-import { fetchArticlesList } from '@/lib/articleService';
 import { Navbar } from '@/components/navbar';
 import { Footer } from '@/components/footer';
+import { fetchArticlesList } from '@/lib/articleService';
+import { FaLaptopCode } from "react-icons/fa";
+
 
 interface ArticlePreview {
   id: string;
@@ -52,14 +53,21 @@ const Articles = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <h4 className='py-2 mb-10 text-center text-2xl bg-red-500 font-bold'>Under development</h4>
-            <h1 className="text-4xl font-bold mb-4">Articles & Blog</h1>
+            <div className='py-2 mb-10 pt-24 text-center '>
+
+              <h1 className='text-3xl text-gradient from-primary to-neon-pink bg-clip-text text-transparent font-bold'>
+                Under Construction
+              </h1>
+              <FaLaptopCode size={72} className='my-4 mx-auto text-accent' />
+              <p className='text-muted-foreground text-2xl'>Stay tuned...</p>
+            </div>
+            {/* <h1 className="text-4xl font-bold mb-4">Articles & Blog</h1>
             <p className="text-lg text-muted-foreground max-w-3xl mb-12">
               Thoughts, tutorials, and insights on web development, design, and technology.
-            </p>
+            </p> */}
           </motion.div>
 
-          {loading ? (
+          {/* {loading ? (
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {[1, 2, 3, 4].map((item) => (
                 <div key={item} className="animate-pulse bg-card border border-border rounded-xl overflow-hidden">
@@ -134,7 +142,7 @@ const Articles = () => {
                 </motion.article>
               ))}
             </div>
-          )}
+          )} */}
         </section>
       </main>
       <Footer />
