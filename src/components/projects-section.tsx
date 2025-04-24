@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Github, ExternalLink, Layers } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { useActiveTab } from "@/context/ActiveTabContext";
+import { useSearchParams } from "react-router-dom";
 
 interface Project {
   id: string;
@@ -26,7 +26,7 @@ const projects: Project[] = [
     technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
     github: "https://github.com/H0ssamAhmed/BeBabyShop-2",
     live: "https://be-baby-shop-2.vercel.app/",
-    category: ["Next.js"]
+    category: ["Next.JS", "Full-Stack"]
   },
   {
     id: "2",
@@ -134,16 +134,16 @@ type CategoryType = "All" | "HTML&CSS" | "JavaScript" | "React.JS" | "Next.JS" |
 const categories: CategoryType[] = ["All", "HTML&CSS", "JavaScript", "React.JS", "Next.JS", "Full-Stack"];
 
 export function ProjectsSection() {
-  const { setActiveTab } = useActiveTab()
-
-  const [filter, setFilter] = useState<CategoryType>("All");
+  const [searchParmas, setSearchParams] = useSearchParams()
+  const cuurentFilterroject = searchParmas.get('activeCategory') || "All"
+  const [filter, setFilter] = useState<CategoryType | string>(cuurentFilterroject);
   const [hoveredProject, setHoveredProject] = useState<string | null>(null);
   const [currentPage, setCurrentPage] = useState(1);
   const projectsPerPage = 6;
 
-  const filteredProjects = projects.filter(
-    (project) => filter === "All" || project.category.includes(filter)
-  );
+
+  const filteredProjects = projects
+    .filter((project) => filter === "All" || project.category.includes(filter));
 
   const indexOfLastProject = currentPage * projectsPerPage;
   const indexOfFirstProject = indexOfLastProject - projectsPerPage;
@@ -167,7 +167,12 @@ export function ProjectsSection() {
     visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
     exit: { opacity: 0, y: 50, transition: { duration: 0.3 } },
   };
-
+  const handleProjectsFilter = (category: string) => {
+    console.log(category);
+    setFilter(category);
+    setCurrentPage(1);
+    setSearchParams({ activeCategory: category })
+  }
   return (
     <section id="projects" className="py-20 bg-background relative">
       <div className="absolute inset-0 grid-bg -z-10" />
@@ -190,20 +195,14 @@ export function ProjectsSection() {
         </motion.div>
 
         {/* Categories */}
-        <motion.div
-          onViewportEnter={(): void => setActiveTab("projects")}
-
-          className="flex justify-center mb-12" id="projects">
+        <div className="flex justify-center mb-12" id="projects">
           <div className="flex flex-wrap justify-center gap-2">
             {categories.map((category) => (
               <Button
                 key={category}
                 variant={filter === category ? "default" : "outline"}
                 size="sm"
-                onClick={() => {
-                  setFilter(category);
-                  setCurrentPage(1); // Reset to first page on filter change
-                }}
+                onClick={() => handleProjectsFilter(category)}
                 className={filter === category ? "bg-primary text-white" : ""}
               >
                 {category === "All" && <Layers className="mr-2 h-4 w-4" />}
@@ -211,7 +210,7 @@ export function ProjectsSection() {
               </Button>
             ))}
           </div>
-        </motion.div>
+        </div>
 
         {/* Projects */}
         <AnimatePresence mode="wait">
@@ -237,10 +236,7 @@ export function ProjectsSection() {
                     alt={project.title}
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                   />
-                  <div
-                    className={`absolute -inset-0.5 bg-gradient-to-r from-primary to-neon-pink rounded-lg opacity-0 group-hover:opacity-30 blur transition duration-500 ${hoveredProject === project.id ? "animate-glow" : ""}`}
-                  />
-                  {/* <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" /> */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   <div className="absolute bottom-0 left-0 right-0 p-4 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
                     <div className="flex gap-2">
                       {project.github && (
@@ -248,7 +244,7 @@ export function ProjectsSection() {
                           href={project.github}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="p-2 bg-background/80  backdrop-blur-sm rounded-full hover:bg-primary transition-colors"
+                          className="p-2 bg-background/80 backdrop-blur-sm rounded-full hover:bg-background transition-colors"
                         >
                           <Github className="h-5 w-5" />
                           <span className="sr-only">GitHub</span>
@@ -259,7 +255,7 @@ export function ProjectsSection() {
                           href={project.live}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="p-2 bg-background/80 backdrop-blur-sm rounded-full hover:bg-primary transition-colors"
+                          className="p-2 bg-background/80 backdrop-blur-sm rounded-full hover:bg-background transition-colors"
                         >
                           <ExternalLink className="h-5 w-5" />
                           <span className="sr-only">Live Demo</span>
@@ -288,9 +284,9 @@ export function ProjectsSection() {
                   </div>
                 </div>
 
-                {/* <div
+                <div
                   className={`absolute -inset-0.5 bg-gradient-to-r from-primary to-secondary rounded-lg opacity-0 group-hover:opacity-30 blur transition duration-500 ${hoveredProject === project.id ? "animate-glow" : ""}`}
-                /> */}
+                />
               </motion.div>
             ))}
           </motion.div>

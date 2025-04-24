@@ -8,42 +8,31 @@ import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/components/ui/use-toast";
 import { SendEmail } from "@/lib/emailService";
-import { useActiveTab } from "@/context/ActiveTabContext";
-
+export interface ContactFormProps {
+  name: string,
+  email: string,
+  subject: string,
+  message: string
+}
 export function ContactSection() {
-  const { setActiveTab } = useActiveTab()
-
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [formData, setFormData] = useState({
+  const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
+  const [formData, setFormData] = useState<ContactFormProps>({
     name: "",
     email: "",
     subject: "",
     message: "",
   });
   const form = useRef<null>();
-
-
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
-
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmiting = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
+    SendEmail(form.current, setIsSubmitting, setFormData)
+  }
 
-    if (SendEmail(form)) {
-      setFormData({
-        name: '',
-        subject: '',
-        email: '',
-        message: '',
-      });
-    };
-    setIsSubmitting(false);
-  };
   const contactVariants = {
     hidden: { opacity: 0, y: 20 },
     visible: {
@@ -65,7 +54,6 @@ export function ContactSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
-          onViewportEnter={(): void => setActiveTab("contact")}
         >
           <h2 className="text-3xl md:text-4xl font-bold">
             Get In <span className="text-gradient">Touch</span>
@@ -127,7 +115,7 @@ export function ContactSection() {
               </div>
             </div>
 
-            <div className="p-6 glass rounded-lg ">
+            <div className="p-6 glass rounded-lg border border-border">
               <h4 className="font-medium mb-4">Connect With Me</h4>
               <div className="flex space-x-4">
                 <a
@@ -180,7 +168,7 @@ export function ContactSection() {
           >
             <h3 id="contact" className="text-2xl font-semibold mb-6">Send Message</h3>
 
-            <form ref={form} onSubmit={handleSubmit} className="space-y-6">
+            <form ref={form} onSubmit={handleSubmiting} className="space-y-6">
               <div className="space-y-2">
                 <Label htmlFor="name">Name</Label>
                 <Input
