@@ -44,8 +44,8 @@ const projects: Project[] = [
     description: "Dark-Light full stack note-taking app connected with convex back-end, authentication and authorization by clerk",
     image: "https://res.cloudinary.com/dc5eb9lmi/image/upload/v1709397201/my-portfolio/jotion_aktfiy.png",
     technologies: ["Next.js", "React", "Tailwind CSS", "Convex"],
-    github: "https://github.com",
-    live: "https://example.com",
+    github: "https://github.com/H0ssamAhmed/Jotion-notion-clone",
+    live: "https://jotion-notion-clone-lkmi9jmb1-h0ssamahmed.vercel.app/",
     category: ["Next.JS", "Full-Stack"]
   },
   {
