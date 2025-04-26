@@ -244,7 +244,7 @@ export function ProjectsSection() {
                           href={project.github}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="p-2 bg-background/80 backdrop-blur-sm rounded-full hover:bg-background transition-colors"
+                          className="p-2 bg-background/80 backdrop-blur-sm rounded-full hover:bg-primary transition-colors"
                         >
                           <Github className="h-5 w-5" />
                           <span className="sr-only">GitHub</span>
@@ -255,7 +255,7 @@ export function ProjectsSection() {
                           href={project.live}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="p-2 bg-background/80 backdrop-blur-sm rounded-full hover:bg-background transition-colors"
+                          className="p-2 bg-background/80 backdrop-blur-sm rounded-full hover:bg-primary transition-colors"
                         >
                           <ExternalLink className="h-5 w-5" />
                           <span className="sr-only">Live Demo</span>
@@ -284,9 +284,9 @@ export function ProjectsSection() {
                   </div>
                 </div>
 
-                <div
+                {/* <div
                   className={`absolute -inset-0.5 bg-gradient-to-r from-primary to-secondary rounded-lg opacity-0 group-hover:opacity-30 blur transition duration-500 ${hoveredProject === project.id ? "animate-glow" : ""}`}
-                />
+                />  */}
               </motion.div>
             ))}
           </motion.div>
